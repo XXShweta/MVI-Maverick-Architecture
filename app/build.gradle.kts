@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     kotlin("kapt")
-    id("com.google.dagger.hilt.android")
+    alias(libs.plugins.hiltPlugin)
 }
 
 android {
@@ -70,28 +70,20 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-   /* //hilt
-    implementation(libs.hilt.android.v249)
-    kapt(libs.hilt.android.compiler.v249)
-    kapt(libs.androidx.hilt.compiler.v120)
-    implementation(libs.androidx.hilt.navigation.compose.v100)
-
-    implementation(libs.androidx.lifecycle.viewmodel.compose)*/
-
     //hilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    kapt("com.google.dagger:hilt-android-compiler:2.48")
-    kapt("androidx.hilt:hilt-compiler:1.1.0")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+    kapt(libs.androidx.hilt.compiler)
 
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     // Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.moshi)
     implementation (libs.logging.interceptor)
-    annotationProcessor("com.google.dagger:hilt-android:2.51")
-    implementation("androidx.navigation:navigation-compose:2.7.5")
-    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+    annotationProcessor(libs.hilt.android)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.hilt.navigation.compose)
 }
 
 kapt {
