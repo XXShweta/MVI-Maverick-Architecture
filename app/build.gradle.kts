@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrainsKotlinAndroid)
     kotlin("kapt")
     alias(libs.plugins.hiltPlugin)
+    alias(libs.plugins.mapsplatformPlugin)
 }
 
 android {
@@ -43,6 +44,9 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.5"
+    }
+    buildFeatures {
+        buildConfig= true
     }
     packaging {
         resources {

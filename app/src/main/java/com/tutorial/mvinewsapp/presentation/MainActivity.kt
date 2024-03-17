@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.tutorial.mvinewsapp.BuildConfig
 import com.tutorial.mvinewsapp.presentation.ui.theme.MVINewsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 

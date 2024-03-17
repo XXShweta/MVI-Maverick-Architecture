@@ -1,5 +1,6 @@
 package com.tutorial.mvinewsapp.di
 
+import com.tutorial.mvinewsapp.BuildConfig
 import com.tutorial.mvinewsapp.data.remote.NewsApi
 import com.tutorial.mvinewsapp.data.repositoryImpl.NewsRepositoryImpl
 import com.tutorial.mvinewsapp.domain.repository.NewsRepository
@@ -20,7 +21,7 @@ object AppModule {
     @Singleton
     fun provideNewsApi(): NewsApi{
         return Retrofit.Builder()
-            .baseUrl("https://newsapi.org/")
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
             .create()

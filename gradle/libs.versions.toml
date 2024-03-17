@@ -14,6 +14,7 @@ composeBom = "2024.02.02"
 loggingInterceptor = "5.0.0-alpha.3"
 navigationCompose = "2.7.7"
 retrofit = "2.9.0"
+mapsplatformPluginVersion = "2.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -45,4 +46,5 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hiltPlugin = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid" }
+mapsplatformPlugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "mapsplatformPluginVersion" }
 
