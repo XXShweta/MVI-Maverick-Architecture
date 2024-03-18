@@ -12,12 +12,15 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.airbnb.mvrx.compose.collectAsState
+import com.airbnb.mvrx.compose.mavericksViewModel
 import com.tutorial.mvinewsapp.BuildConfig
 import com.tutorial.mvinewsapp.presentation.ui.theme.MVINewsAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,7 +36,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    NewsDisplay()
+                    val viewModel: NewsViewModel = mavericksViewModel()
+                    NewsDisplay(viewModel = viewModel)
                 }
             }
         }
@@ -43,17 +47,22 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun NewsDisplay(
     modifier: Modifier = Modifier,
-    viewModel: NewsViewModel = hiltViewModel()
+    viewModel: NewsViewModel
 ) {
+
     Box(
         modifier = modifier.fillMaxSize()
     ){
-        if(viewModel.state.isLoading) {
+
+        val state by viewModel.collectAsState()
+
+
+        if(state.isLoading) {
             CircularProgressIndicator(
                 modifier = Modifier.align(Alignment.Center)
             )
         }
-        viewModel.state.error?.let { error ->
+        state.error?.let { error ->
             Text(
                 text = error,
                 color = Color.Red,
@@ -62,7 +71,7 @@ fun NewsDisplay(
             )
         }
 
-        viewModel.state.newsInfo?.let { data ->
+        state.newsInfo?.let { data ->
             LazyColumn {
                 items(data){ article ->
                     NewsCard(newsArticle = article)
@@ -77,6 +86,6 @@ fun NewsDisplay(
 @Composable
 fun GreetingPreview() {
     MVINewsAppTheme {
-        NewsDisplay()
+        //NewsDisplay()
     }
 }

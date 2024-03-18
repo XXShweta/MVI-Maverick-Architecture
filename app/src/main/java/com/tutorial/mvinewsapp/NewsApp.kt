@@ -1,7 +1,13 @@
 package com.tutorial.mvinewsapp
 
 import android.app.Application
+import com.airbnb.mvrx.Mavericks
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class NewsApp : Application()
+class NewsApp : Application(){
+    override fun onCreate() {
+        super.onCreate()
+        Mavericks.initialize(this)
+    }
+}
