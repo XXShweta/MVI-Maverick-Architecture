@@ -5,7 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface NewsApi {
-
     @GET("v2/everything")
     suspend fun getNews(
         @Query("q") topic : String = "City",

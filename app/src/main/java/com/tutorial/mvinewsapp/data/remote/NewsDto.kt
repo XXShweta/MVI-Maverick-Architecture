@@ -5,7 +5,6 @@ import com.squareup.moshi.Json
 data class NewsDto(
     val articles: List<Article>
 )
-
 data class Article(
     val author: String?= null,
     val title: String?= null,
