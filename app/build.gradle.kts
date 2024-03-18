@@ -89,9 +89,9 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.hilt.navigation.compose)
 
-    implementation("com.airbnb.android:mavericks:3.0.9")
-    implementation("com.airbnb.android:mavericks-compose:3.0.9")
-    implementation("com.airbnb.android:mavericks-hilt:3.0.9")
+    implementation(libs.mavericks)
+    implementation(libs.mavericks.compose)
+    implementation(libs.mavericks.hilt)
 
 }
 

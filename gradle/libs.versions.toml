@@ -12,6 +12,7 @@ lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.8.2"
 composeBom = "2024.02.02"
 loggingInterceptor = "5.0.0-alpha.3"
+mavericks = "3.0.9"
 navigationCompose = "2.7.7"
 retrofit = "2.9.0"
 mapsplatformPluginVersion = "2.0.1"
@@ -39,6 +40,9 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
+mavericks = { module = "com.airbnb.android:mavericks", version.ref = "mavericks" }
+mavericks-compose = { module = "com.airbnb.android:mavericks-compose", version.ref = "mavericks" }
+mavericks-hilt = { module = "com.airbnb.android:mavericks-hilt", version.ref = "mavericks" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 
 
