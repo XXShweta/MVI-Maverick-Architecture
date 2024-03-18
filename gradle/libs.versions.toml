@@ -15,6 +15,7 @@ loggingInterceptor = "5.0.0-alpha.3"
 navigationCompose = "2.7.7"
 retrofit = "2.9.0"
 mapsplatformPluginVersion = "2.0.1"
+coilCompose = "2.6.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -40,7 +41,7 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
